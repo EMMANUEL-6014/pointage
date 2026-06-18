@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Système de Pointage</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="login-page">
+
+  <div class="login-wrapper">
+    <div class="login-card">
+
+      <div class="logo-area">
+        <div class="logo-upload-zone" id="logoZone" onclick="document.getElementById('logoInput').click()" title="Cliquez pour choisir le logo de l'entreprise">
+          <img id="logoImg" src="" alt="" style="display:none;" />
+          <div id="logoPlaceholder">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="3"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+            <span>Logo</span>
+          </div>
+          <input type="file" id="logoInput" accept="image/*" style="display:none" />
+        </div>
+        <div id="companyNameDisplay" class="company-name-display"></div>
+        <h1 class="app-title">Système de Pointage</h1>
+        <p class="app-subtitle">Gestion des heures d'arrivée &amp; de départ</p>
+      </div>
+
+      <form id="loginForm" novalidate>
+        <div class="field-group">
+          <label for="username">Identifiant</label>
+          <input type="text" id="username" placeholder="Entrez votre identifiant" autocomplete="username" required />
+        </div>
+        <div class="field-group">
+          <label for="password">Mot de passe</label>
+          <div class="password-wrap">
+            <input type="password" id="password" placeholder="Entrez votre mot de passe" autocomplete="current-password" required />
+            <button type="button" class="toggle-pw" onclick="togglePassword()" title="Afficher/masquer">
+              <svg id="eyeIcon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="loginError" class="error-msg" style="display:none"></div>
+        <button type="submit" class="btn-primary">Se connecter</button>
+      </form>
+
+    </div>
+    <p class="footer-note">© <span id="year"></span> — Tous droits réservés</p>
+  </div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>
